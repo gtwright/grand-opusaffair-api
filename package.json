@@ -5,10 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/nodemon --exec babel-node src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
+    "serve": "npm run build && node ./build/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build": "babel -d ./build ./src -s",
     "seedDb": "./node_modules/.bin/babel-node src/seed/seed-db.js"
   },
-  "author": "William Lyon",
+  "author": "Graham Wright",
   "license": "MIT",
   "dependencies": {
     "apollo-boost": "^0.1.7",
